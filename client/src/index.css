@@ -1,78 +1,252 @@
-/* Tailwind CSS imports */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Your actual design system - based on your CSS bundle */
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&display=swap');
 
-/* Custom glassmorphic styles */
-@layer base {
-  body {
+/* Color pallette, fonts, sizes, CSS vars */
+:root {
+    /* 🎨 Colors */
+    --color-bg: #0d1117;
+    --color-surface: #161b22;
+    --color-primary: #14b5ff;
+    --color-secondary: #f78166;
+    --color-text: whitesmoke;
+    --color-muted: #8b949e;
+
+    /* 🔗 Link colors */
+    --color-link: #7652f5;
+    --color-link-hover: #5e17eb;
+
+    /* 🔢 Equation colors */
+    --color-math: #00f5db;
+
+    /* 🌈 Gradients */
+    --gradient-light-to-dark-blue: linear-gradient(to right bottom, #00e8ff, #14b5ff, #3a98ff, #0070eb);
+    --gradient-cyan-to-blue: linear-gradient(130deg, #00ffee, #0a95eb);
+    --gradient-green-to-blue: linear-gradient(#22f792, #27aaff);
+    --gradient-blue-to-purple: linear-gradient(to right bottom, #00e8ff, #14b5ff, #5280ff, #7952f5);
+
+    /* ✍️ Typography */
+    --font-aclonica: 'Aclonica', sans-serif;
+    --font-sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'Fira Code', monospace;
+    --font-math: "Times New Roman", "Computer Modern", serif;
+
+    /* 🔲 Spacing */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+
+    /* 🔘 Borders + Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-pill: 50px;
+
+    /* 🌗 Shadows */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.4);
+
+    /* 🪟 Glassmorphism */
+    --glass-bg: rgba(0, 0, 0, 0.5);
+    --glass-border: rgba(255, 255, 255, 0.1);
+
+    /* #️⃣ Heading Gradients */
+    --heading-gradient-1: var(--gradient-cyan-to-blue);
+    --heading-gradient-2: var(--gradient-light-to-dark-blue);
+    --heading-gradient-3: var(--gradient-green-to-blue);
+
+    /* Tech and STEM Icon Gradients */
+    --tech-icon-gradient: linear-gradient(145deg, rgba(34 , 247, 147, 0.2), rgba(10, 149, 235, 0.3));
+    --stem-icon-gradient: linear-gradient(145deg, rgba(169, 34, 247, 0.2), rgba(10, 149, 235, 0.3));
+}
+
+/* Background */
+html, body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    min-height: 100vh;
-  }
+    padding: 0;
+    background-image: url('/assets/wisp_1757552470820.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 
-  * {
+/* Base reset */
+* {
+    font-family: var(--font-aclonica);
     box-sizing: border-box;
-  }
+    transition: all 0.4s ease-in-out;
 }
 
-/* Glass morphism effects */
-.glass {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 15px;
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 80px; /* Account for header */
 }
 
-.glass-dark {
-  background: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 15px;
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--glass-bg);
+    border-bottom: 1px solid var(--glass-border);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    z-index: 100;
+    padding: 15px 0;
 }
 
-/* Gradient text effects */
-.gradient-text {
-  background: linear-gradient(45deg, #00e8ff, #14b5ff, #3a98ff, #7952f5);
-  background-size: 400% 400%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientShift 3s ease-in-out infinite;
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-@keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+.header-logo {
+    height: 40px;
+    width: auto;
 }
 
-/* Skill bubble effects */
-.skill-bubble {
-  transition: all 0.3s ease;
-  cursor: pointer;
+/* Section styles */
+.section {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
 }
 
-.skill-bubble:hover {
-  transform: scale(1.1) rotate(5deg);
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Space theme backgrounds */
-.space-bg {
-  background-image: url('/assets/spacebackground_3_1757552450150.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+.section-content {
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px;
 }
 
-.wisp-bg {
-  background-image: url('/assets/wisp_1757552470820.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+/* Buttons */
+.btn {
+    background-image: var(--gradient-light-to-dark-blue);
+    box-shadow: 0 4px 15px 0 rgba(56, 152, 255, 0.5);
+    width: 85%;
+    max-width: 180px;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 10px auto;
+    height: 45px;
+    text-align: center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    transition: all 0.4s ease-in-out;
+    font-family: var(--font-aclonica);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    color: white !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    line-height: 45px;
+}
+
+.btn:hover {
+    background-position: 100% 0;
+    filter: brightness(1.1);
+    transition: all 0.4s ease-in-out;
+}
+
+/* Card layouts */
+.card-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px; 
+    padding: 1.5rem;
+}
+
+/* Contact links */
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.contact-links a {
+    font-weight: bold;
+    color: #14b5ff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.contact-links a:hover {
+    filter: brightness(1.2);
+    color: #5e17eb;
+    text-decoration: underline;
+}
+
+/* Gradient text for headings */
+.gradient-heading {
+    background: var(--heading-gradient-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+/* Skills grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.skill-item {
+    background: var(--tech-icon-gradient);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: whitesmoke;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.skill-item.stem {
+    background: var(--stem-icon-gradient);
+}
+
+.skill-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
