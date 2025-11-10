@@ -50,7 +50,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-image: url('/assets/wisp_1757552470820.jpg');
+  background-image: url('/assets/wisp-bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -213,7 +213,9 @@ html, body {
 }
 
 .note-title {
-  font-weight: 600;
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 0.95rem;
   color: var(--color-text);
   margin-bottom: var(--space-sm);
   line-height: 1.4;
@@ -358,9 +360,10 @@ html, body {
 
 .abstract h3 {
   font-family: var(--font-heading);
-  font-size: 1rem;
+  font-size: 0.9rem;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   color: var(--color-primary);
   margin-bottom: var(--space-md);
 }
@@ -376,16 +379,21 @@ html, body {
 
 .note-section h2 {
   font-family: var(--font-heading);
-  font-size: 1.75rem;
+  font-size: 1.65rem;
+  font-weight: 400;
   color: var(--color-primary);
   margin-bottom: var(--space-lg);
   padding-bottom: var(--space-sm);
   border-bottom: 2px solid rgba(20, 181, 255, 0.3);
+  letter-spacing: 0.5px;
 }
 
 .note-section p {
   margin-bottom: var(--space-lg);
   color: var(--color-text);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  letter-spacing: 0.2px;
 }
 
 .math-content {
@@ -436,9 +444,11 @@ html, body {
 
 .linked-notes h3 {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
+  font-weight: 400;
   color: var(--color-primary);
   margin-bottom: var(--space-md);
+  letter-spacing: 0.5px;
 }
 
 .links-container {
@@ -476,9 +486,11 @@ html, body {
 
 .citations h3 {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
+  font-weight: 400;
   color: var(--color-secondary);
   margin-bottom: var(--space-lg);
+  letter-spacing: 0.5px;
 }
 
 .citation-item {
@@ -536,17 +548,32 @@ html, body {
 .footer {
   margin-top: auto;
   padding: var(--space-lg);
-  text-align: center;
   background: var(--glass-bg);
   border-top: 1px solid var(--glass-border);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.footer-orb {
+  height: 32px;
+  width: auto;
+  opacity: 0.6;
+  filter: drop-shadow(0 0 8px rgba(20, 181, 255, 0.4));
+}
+
 .footer p {
   color: var(--color-muted);
   font-size: 0.875rem;
   margin: 0;
+  text-align: center;
 }
 
 /* Responsive Design */

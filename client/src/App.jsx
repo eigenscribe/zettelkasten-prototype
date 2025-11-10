@@ -19,7 +19,7 @@ function App() {
         <div className="header-content">
           <div className="header-branding">
             <img 
-              src="/assets/logo1_1757552304373.png" 
+              src="/assets/logo.png" 
               alt="Logo" 
               className="header-logo"
             />
@@ -46,9 +46,12 @@ function App() {
       </div>
 
       <footer className="footer">
-        <p>
-          Built with PreTeXt principles, MathJax, and the Zettelkasten method for networked mathematical thinking.
-        </p>
+        <div className="footer-content">
+          <img src="/assets/orb.png" alt="" className="footer-orb" />
+          <p>
+            Built with PreTeXt principles, MathJax, and the Zettelkasten method for networked mathematical thinking.
+          </p>
+        </div>
       </footer>
     </div>
   );
