@@ -292,8 +292,8 @@ html, body {
 }
 
 .tag {
-  font-size: 0.7rem;
-  padding: 4px 10px;
+  font-size: 0.6rem;
+  padding: 3px 8px;
   background: linear-gradient(145deg, rgba(0, 232, 255, 0.15), rgba(0, 112, 235, 0.15));
   border: 1px solid rgba(20, 181, 255, 0.4);
   border-radius: var(--radius-pill);
@@ -390,14 +390,14 @@ html, body {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   padding: 4px 10px;
-  background: rgba(167, 107, 255, 0.15);
-  border: 1px solid rgba(167, 107, 255, 0.5);
+  background: rgba(180, 130, 255, 0.2);
+  border: 1px solid rgba(180, 130, 255, 0.6);
   border-radius: var(--radius-sm);
-  color: #d4b3ff;
+  color: #e8d4ff;
   letter-spacing: 1.5px;
-  font-weight: 500;
-  box-shadow: 0 0 16px rgba(167, 107, 255, 0.5), 0 0 8px rgba(212, 179, 255, 0.3);
-  text-shadow: 0 0 12px rgba(212, 179, 255, 0.8), 0 0 6px rgba(255, 230, 255, 0.5);
+  font-weight: 600;
+  box-shadow: 0 0 20px rgba(180, 130, 255, 0.6), 0 0 10px rgba(232, 212, 255, 0.4);
+  text-shadow: 0 0 15px rgba(232, 212, 255, 1), 0 0 8px rgba(255, 240, 255, 0.8);
 }
 
 .note-tags-display {
@@ -410,16 +410,17 @@ html, body {
   font-family: var(--font-heading);
   font-size: 0.65rem;
   padding: 4px 10px;
-  background: linear-gradient(145deg, rgba(0, 232, 255, 0.15), rgba(0, 112, 235, 0.15));
-  border: 1px solid rgba(20, 181, 255, 0.4);
+  background: linear-gradient(145deg, rgba(0, 232, 255, 0.2), rgba(0, 112, 235, 0.2));
+  border: 1px solid rgba(20, 181, 255, 0.5);
   border-radius: var(--radius-pill);
-  color: var(--color-primary);
+  color: #5ddbff;
   transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: 500;
 }
 
 .tag-badge:hover {
-  background: linear-gradient(145deg, rgba(0, 232, 255, 0.25), rgba(0, 112, 235, 0.25));
+  background: linear-gradient(145deg, rgba(0, 232, 255, 0.3), rgba(0, 112, 235, 0.3));
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(20, 181, 255, 0.3);
 }
