@@ -30,15 +30,15 @@ function NoteDisplay({ note, onNoteClick }) {
       )}
       
       <div className="note-header">
+        <h1 className="note-title-main">{note.title}</h1>
         <div className="note-metadata">
-          <span className="note-id-badge">{note.id}</span>
           <div className="note-tags-display">
             {note.tags.map(tag => (
               <span key={tag} className="tag-badge">#{tag}</span>
             ))}
           </div>
+          <span className="note-id-badge">{note.id}</span>
         </div>
-        <h1 className="note-title-main">{note.title}</h1>
       </div>
 
       <div className="note-content">

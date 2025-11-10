@@ -379,8 +379,10 @@ html, body {
 .note-metadata {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: var(--space-md);
-  margin-bottom: var(--space-md);
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-lg);
   flex-wrap: wrap;
 }
 
@@ -388,14 +390,14 @@ html, body {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   padding: 4px 10px;
-  background: rgba(118, 82, 245, 0.1);
-  border: 1px solid rgba(118, 82, 245, 0.4);
+  background: rgba(167, 107, 255, 0.15);
+  border: 1px solid rgba(167, 107, 255, 0.5);
   border-radius: var(--radius-sm);
-  color: #b794f6;
+  color: #d4b3ff;
   letter-spacing: 1.5px;
   font-weight: 500;
-  box-shadow: 0 0 12px rgba(118, 82, 245, 0.3);
-  text-shadow: 0 0 10px rgba(183, 148, 246, 0.6);
+  box-shadow: 0 0 16px rgba(167, 107, 255, 0.5), 0 0 8px rgba(212, 179, 255, 0.3);
+  text-shadow: 0 0 12px rgba(212, 179, 255, 0.8), 0 0 6px rgba(255, 230, 255, 0.5);
 }
 
 .note-tags-display {
