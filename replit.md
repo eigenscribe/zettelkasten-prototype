@@ -128,14 +128,14 @@ Content: No AI-generated content except layout and styling. Sample prototype not
 - Graph auto-zooms to fit all nodes on load for optimal initial view
 - Responsive design with mobile-optimized layouts
 
-## Documentation
+## Sample Notes
 
-### SETUP_GUIDE.md
-Comprehensive tutorial for running the Zettelkasten project locally outside of Replit:
+### Local Setup Guide (Tutorial)
+Comprehensive tutorial note (ID: 202511100005) in the Tutorials section explaining how to run the Zettelkasten project locally:
 - Prerequisites: Node.js, Python (optional), Git
-- Step-by-step instructions for downloading project from Replit
-- Local development setup and running dev server
-- Note structure and customization guide
-- Building for production deployment
-- Troubleshooting common issues
-- Backup strategies for note data
+- Downloading project from Replit (ZIP or Git)
+- Installing dependencies and running development server
+- Making changes to notes and building for production
+- Customization tips for fonts, colors, and images
+- Troubleshooting common setup issues
+- Backup strategies for preserving note data
