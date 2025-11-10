@@ -1,5 +1,5 @@
-# Flask backend for personal portfolio website
-# This serves the React frontend and provides any needed API endpoints
+# Flask backend for Zettelkasten Math Journal
+# This serves the built React frontend for production deployment
 
 from flask import Flask, send_from_directory, send_file, jsonify
 from flask_cors import CORS
