@@ -11,7 +11,7 @@
   --color-link: #7652f5;
   --color-link-hover: #5e17eb;
   --color-math: #00f5db;
-  --color-warning: #14b5ff;
+  --color-warning: #ffa657;
 
   /* Gradients */
   --gradient-light-to-dark-blue: linear-gradient(to right bottom, #00e8ff, #14b5ff, #3a98ff, #0070eb);
@@ -605,14 +605,14 @@ html, body {
   padding: var(--space-lg);
   background: rgba(255, 255, 255, 0.03);
   border-radius: var(--radius-md);
-  border-left: 3px solid var(--color-secondary);
+  border-left: 3px solid var(--color-primary);
 }
 
 .citations h3 {
   font-family: var(--font-heading);
   font-size: 1.15rem;
   font-weight: 400;
-  color: var(--color-secondary);
+  color: var(--color-primary);
   margin-bottom: var(--space-lg);
   letter-spacing: 0.5px;
 }
