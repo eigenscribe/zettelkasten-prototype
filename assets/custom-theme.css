@@ -57,25 +57,37 @@ body.pretext {
 
 /* Header & Masthead */
 .ptx-masthead {
-  background: rgba(0, 0, 0, 0.6) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--gradient-cyan-to-blue) !important;
+  border-bottom: 2px solid rgba(0, 232, 255, 0.5);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 232, 255, 0.3);
+}
+
+.ptx-masthead .title-container {
+  text-align: left !important;
+  justify-content: flex-start !important;
 }
 
 .ptx-masthead .title-container h1 {
   font-family: var(--font-heading) !important;
   font-size: 1.8rem !important;
-  background: var(--gradient-cyan-to-blue);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #0d1117 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ptx-masthead .title-container h1 a {
+  color: #0d1117 !important;
+}
+
+.ptx-masthead .byline {
+  color: rgba(13, 17, 23, 0.7) !important;
 }
 
 .ptx-masthead .logo-link img {
   height: 50px;
   margin-right: 1rem;
-  filter: drop-shadow(0 0 8px rgba(0, 232, 255, 0.4));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 /* Add logo before title */
@@ -89,19 +101,29 @@ body.pretext {
   background-repeat: no-repeat;
   margin-right: 1rem;
   vertical-align: middle;
-  filter: drop-shadow(0 0 8px rgba(0, 232, 255, 0.4));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 /* Sidebar & TOC */
 .ptx-sidebar {
   background: rgba(0, 0, 0, 0.6) !important;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 2px solid rgba(0, 232, 255, 0.3);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
 .ptx-sidebar .ptx-toc {
   font-family: var(--font-heading);
+}
+
+/* TOC Chapter headers (Prototypes, Tutorials, etc.) */
+.ptx-toc ul.structural > li > .codenumber,
+.ptx-toc ul.structural > li > .title {
+  background: var(--gradient-cyan-to-blue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
 }
 
 .ptx-toc ul.structural li {
@@ -118,9 +140,21 @@ body.pretext {
   transform: translateX(4px);
 }
 
-.ptx-toc ul.structural li.active {
-  background: rgba(20, 181, 255, 0.15);
-  border-color: var(--color-primary);
+/* Active/selected section - inverted gradient */
+.ptx-toc ul.structural li.active,
+.ptx-toc li.active {
+  background: var(--gradient-cyan-to-blue) !important;
+  border-color: #00e8ff !important;
+  box-shadow: 0 2px 8px rgba(0, 232, 255, 0.3);
+}
+
+.ptx-toc ul.structural li.active a,
+.ptx-toc li.active a,
+.ptx-toc li.active .codenumber,
+.ptx-toc li.active .title {
+  color: #0d1117 !important;
+  font-weight: bold;
+  -webkit-text-fill-color: #0d1117 !important;
 }
 
 /* Main Content Area */
