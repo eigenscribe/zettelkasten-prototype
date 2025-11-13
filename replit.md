@@ -72,9 +72,9 @@ Content: No AI-generated content except layout and styling. Sample prototype not
 - **Development Server**: PreTeXt server running on port 5000 with live preview capability
 - **Project Structure**: Clean XML organization with source files in `/source/`, assets in `/assets/`, output in `/output/web/`
 - **Navigation Styling**: All buttons (top nav and footer) use glassmorphic gradient backgrounds with cyan-to-purple theme and smooth hover animations
-- **Footer Branding**: Custom eigenscribe © 2025 footer with dragon logo and gradient text, centered navigation buttons
-- **Selected Section Styling**: All selected sections (root and subsections) use purple theme to avoid clashing with gradient text
-- **Page Footer**: Custom eigenscribe © 2025 branding with dragon logo positioned at absolute bottom of every page
+- **Footer Branding**: Custom eigenscribe © 2025 footer with dragon logo and gradient text, centered navigation buttons  
+- **Selected Section Styling**: Active TOC sections have transparent background with cyan left border (4px) to avoid color clash with gradient text
+- **Page Footer**: Custom eigenscribe © 2025 branding with dragon logo replaces default PreTeXt/Runestone/MathJax attribution links at page bottom
 
 ### Original React Version (Nov 10, 2025)
 

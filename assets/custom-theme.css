@@ -165,21 +165,21 @@ body.pretext {
   transform: translateX(4px);
 }
 
-/* Active/selected section - purple theme to avoid clash with gradient text */
+/* Active/selected section - NO background, only border to avoid clash with cyan text */
 .ptx-toc ul.structural li.active,
 .ptx-toc li.active {
-  background: linear-gradient(135deg, rgba(121, 82, 245, 0.08), rgba(169, 92, 232, 0.05)) !important;
-  border-left: 3px solid rgba(121, 82, 245, 0.6) !important;
-  border-color: rgba(121, 82, 245, 0.3) !important;
-  box-shadow: 0 0 12px rgba(121, 82, 245, 0.15);
+  background: transparent !important;
+  border-left: 4px solid rgba(20, 181, 255, 0.7) !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
 }
 
-/* Root-level active sections (Prototypes, Tutorials, etc.) - also purple */
+/* Root-level active sections (Prototypes, Tutorials, etc.) - NO background */
 .ptx-toc ul.structural > li.active {
-  background: linear-gradient(135deg, rgba(121, 82, 245, 0.08), rgba(169, 92, 232, 0.05)) !important;
-  border-left: 3px solid rgba(121, 82, 245, 0.6) !important;
-  border-color: rgba(121, 82, 245, 0.3) !important;
-  box-shadow: 0 0 12px rgba(121, 82, 245, 0.15);
+  background: transparent !important;
+  border-left: 4px solid rgba(20, 181, 255, 0.9) !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
 }
 
 .ptx-toc ul.structural li.active a,
@@ -549,11 +549,15 @@ body.pretext {
   margin-top: auto;
 }
 
-/* Hide default PreTeXt/Runestone/MathJax logos, add custom branding */
+/* Hide default PreTeXt/Runestone/MathJax logos and all content, add custom branding */
 .ptx-page-footer .pretext-link,
 .ptx-page-footer .runestone-link,
-.ptx-page-footer .mathjax-link {
+.ptx-page-footer .mathjax-link,
+.ptx-page-footer a,
+.ptx-page-footer p,
+.ptx-page-footer > *:not(::before):not(::after) {
   display: none !important;
+  visibility: hidden !important;
 }
 
 /* Add custom logo and copyright to page footer */
