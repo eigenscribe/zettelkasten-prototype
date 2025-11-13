@@ -124,7 +124,13 @@ body.pretext {
 }
 
 /* Sidebar & TOC */
+.ptx-page {
+  grid-template-columns: 320px 1fr !important;
+}
+
 .ptx-sidebar {
+  width: 320px !important;
+  max-width: 320px !important;
   background: rgba(0, 0, 0, 0.6) !important;
   border-right: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
@@ -200,8 +206,7 @@ body.pretext {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  max-width: 900px;
-  margin: 2rem auto;
+  margin: 2rem;
 }
 
 /* Headings */
