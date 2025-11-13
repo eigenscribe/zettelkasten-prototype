@@ -152,7 +152,7 @@ body.pretext {
 }
 
 .ptx-toc ul.structural li {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid transparent;
   border-radius: 8px;
   margin-bottom: 6px;
@@ -160,25 +160,23 @@ body.pretext {
 }
 
 .ptx-toc ul.structural li:hover {
-  background: rgba(20, 181, 255, 0.05);
-  border-color: rgba(20, 181, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(20, 181, 255, 0.3);
   transform: translateX(4px);
 }
 
-/* Active/selected section - NO background, only border to avoid clash with cyan text */
+/* Active/selected section - subtle cyan background matching original design */
 .ptx-toc ul.structural li.active,
 .ptx-toc li.active {
-  background: transparent !important;
-  border-left: 4px solid rgba(20, 181, 255, 0.7) !important;
-  border-color: transparent !important;
+  background: rgba(20, 181, 255, 0.15) !important;
+  border-color: rgba(20, 181, 255, 0.5) !important;
   box-shadow: none !important;
 }
 
-/* Root-level active sections (Prototypes, Tutorials, etc.) - NO background */
+/* Root-level active sections - same styling */
 .ptx-toc ul.structural > li.active {
-  background: transparent !important;
-  border-left: 4px solid rgba(20, 181, 255, 0.9) !important;
-  border-color: transparent !important;
+  background: rgba(20, 181, 255, 0.15) !important;
+  border-color: rgba(20, 181, 255, 0.5) !important;
   box-shadow: none !important;
 }
 
