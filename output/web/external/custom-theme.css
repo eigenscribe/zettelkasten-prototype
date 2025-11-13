@@ -509,52 +509,72 @@ body.pretext {
 }
 
 /* Page footer at the very bottom */
-.ptx-page-footer {
-  background: rgba(0, 0, 0, 0.7);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+.ptx-page-footer,
+#ptx-page-footer {
+  background: rgba(0, 0, 0, 0.7) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  padding: 2rem 1rem;
-  text-align: center;
+  padding: 2rem 1rem !important;
+  text-align: center !important;
   position: relative;
   margin-top: auto;
 }
 
-/* Hide default PreTeXt/Runestone/MathJax logos and all content, add custom branding */
-.ptx-page-footer .pretext-link,
-.ptx-page-footer .runestone-link,
-.ptx-page-footer .mathjax-link,
+/* Hide ALL default footer content including PreTeXt/Runestone/MathJax logos */
+.ptx-page-footer *,
+#ptx-page-footer *,
 .ptx-page-footer a,
-.ptx-page-footer p,
-.ptx-page-footer > *:not(::before):not(::after) {
+#ptx-page-footer a,
+.ptx-page-footer .pretext-link,
+#ptx-page-footer .pretext-link,
+.ptx-page-footer .runestone-link,
+#ptx-page-footer .runestone-link,
+.ptx-page-footer .mathjax-link,
+#ptx-page-footer .mathjax-link,
+.ptx-page-footer img,
+#ptx-page-footer img,
+.ptx-page-footer svg,
+#ptx-page-footer svg,
+.ptx-page-footer .logo,
+#ptx-page-footer .logo {
   display: none !important;
   visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 /* Add custom logo and copyright to page footer */
-.ptx-page-footer::before {
-  content: '';
-  display: block;
-  width: 35px;
-  height: 35px;
-  background-image: url('logo.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  filter: drop-shadow(0 0 8px rgba(0, 232, 255, 0.5));
-  margin: 0 auto 0.75rem auto;
+.ptx-page-footer::before,
+#ptx-page-footer::before {
+  content: '' !important;
+  display: block !important;
+  width: 35px !important;
+  height: 35px !important;
+  background-image: url('logo.png') !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  filter: drop-shadow(0 0 8px rgba(0, 232, 255, 0.5)) !important;
+  margin: 0 auto 0.75rem auto !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
-.ptx-page-footer::after {
-  content: 'eigenscribe © 2025';
-  display: block;
-  font-family: var(--font-heading);
-  background: var(--gradient-cyan-to-blue);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-size: 1rem;
-  text-align: center;
+.ptx-page-footer::after,
+#ptx-page-footer::after {
+  content: 'eigenscribe © 2025' !important;
+  display: block !important;
+  font-family: var(--font-heading) !important;
+  background: var(--gradient-cyan-to-blue) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-size: 1rem !important;
+  text-align: center !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Bibliography */
