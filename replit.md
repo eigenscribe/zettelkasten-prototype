@@ -70,6 +70,8 @@ Content: No AI-generated content except layout and styling. Sample prototype not
 - **Footer Centering Fix**: Added CSS to override PreTeXt's float rules on footer images and paragraphs, ensuring flexbox layout centers logo and copyright text side-by-side
 - **TOC Styling Cleanup**: Removed all default PreTeXt list markers, text transforms, font variants, and letter spacing from table of contents
 - **Custom TOC Spacing**: Added explicit padding and margins to TOC items for clean, modern appearance without bullets or uppercase forcing
+- **TOC Active State Fix**: Overrode PreTeXt's default periwinkle background on active `.toc-title-box` elements with transparent backgrounds, allowing custom cyan-purple gradient to show through
+- **TOC Rounded Corners**: Removed square container borders from nested active lists, ensuring all TOC items use consistent 8px border radius matching site design
 
 ### PreTeXt Conversion (Nov 13, 2025)
 - **Complete Migration**: Converted entire project from React/Vite to PreTeXt XML format

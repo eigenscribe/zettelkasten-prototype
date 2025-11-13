@@ -214,6 +214,7 @@ body.pretext {
   background: linear-gradient(135deg, rgba(20, 181, 255, 0.15), rgba(121, 82, 245, 0.1)) !important;
   border-color: rgba(20, 181, 255, 0.3) !important;
   box-shadow: none !important;
+  border-radius: 8px !important;
 }
 
 /* Root-level active sections - same styling */
@@ -221,6 +222,26 @@ body.pretext {
   background: linear-gradient(135deg, rgba(20, 181, 255, 0.15), rgba(121, 82, 245, 0.1)) !important;
   border-color: rgba(20, 181, 255, 0.3) !important;
   box-shadow: none !important;
+  border-radius: 8px !important;
+}
+
+/* Override PreTeXt's default periwinkle backgrounds on active toc-title-box elements */
+.ptx-toc .toc-item.active > .toc-title-box,
+.ptx-toc .toc-item.contains-active > .toc-title-box {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  border-radius: inherit !important;
+}
+
+/* Remove square containers from nested active lists */
+.ptx-toc .toc-item.active > ul,
+.ptx-toc .toc-item.contains-active > ul {
+  background: transparent !important;
+  background-color: transparent !important;
+  border-radius: inherit !important;
+  border: none !important;
+  padding-left: 1rem !important;
 }
 
 .ptx-toc ul.structural li.active a,
