@@ -81,12 +81,14 @@ See the tutorial section in the journal itself for complete deployment instructi
 - **Cleaned Temporary Files**: Removed development logs, attached assets, and empty directories
 - **Updated Documentation**: Streamlined replit.md to reflect current PreTeXt-only architecture
 
-### CSS Overrides for Footer and TOC (Nov 13, 2025)
+### CSS Overrides for Footer and TOC (Dec 16, 2025)
 - **Footer Centering Fix**: Added CSS to override PreTeXt's float rules on footer images and paragraphs, ensuring flexbox layout centers logo and copyright text side-by-side
 - **TOC Styling Cleanup**: Removed all default PreTeXt list markers, text transforms, font variants, and letter spacing from table of contents
 - **Custom TOC Spacing**: Added explicit padding and margins to TOC items for clean, modern appearance without bullets or uppercase forcing
-- **TOC Active State Fix**: Overrode PreTeXt's default periwinkle background on active `.toc-title-box` elements with transparent backgrounds, allowing custom cyan-purple gradient to show through
-- **TOC Rounded Corners**: Removed square container borders from nested active lists, ensuring all TOC items use consistent 8px border radius matching site design
+- **TOC Active State Fix**: Active leaf items (notes/sections) now show cyan-purple gradient background. Parent items with `.contains-active` class (Front Matter, chapter headings) retain PreTeXt's default red styling due to deep framework specificity.
+- **TOC Rounded Corners**: Increased border-radius to 16px for sidebar items
+- **Top Navigation Buttons**: Increased opacity for better visibility (rgba(26, 27, 29, 0.98))
+- **Bottom Footer Hidden**: Removed redundant bottom navigation footer container
 
 ### PreTeXt Conversion (Nov 13, 2025)
 - **Complete Migration**: Converted entire project from React/Vite to PreTeXt XML format

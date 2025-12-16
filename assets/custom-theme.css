@@ -1,12 +1,35 @@
 /* Import Custom Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Merriweather:wght@300;400;700&family=Fira+Code&display=swap');
 
-:root {
+:root,
+:root.dark-mode,
+html,
+html.dark-mode {
+  /* Override PreTeXt theme colors - cyan/purple instead of blue/red */
+  --primary-color: #14b5ff !important;
+  --secondary-color: #7952f5 !important;
+  --primary-color-dark: #0a95eb !important;
+  --primary-color-light: #00e8ff !important;
+  --secondary-color-dark: #5e17eb !important;
+  --secondary-color-light: #9b7dff !important;
+  --primary-color-gray-5: rgba(20, 181, 255, 0.15) !important;
+  
+  /* TOC active item overrides - these are the actual variables PreTeXt uses */
+  --tocitem-active-background: rgba(20, 181, 255, 0.2) !important;
+  --tocitem-active-text-color: #00e8ff !important;
+  --tocitem-active-border-color: rgba(20, 181, 255, 0.4) !important;
+  --tocitem-active-backgrounde: rgba(20, 181, 255, 0.15) !important;
+  
+  /* TOC specific overrides */
+  --toc-item-active-background: linear-gradient(135deg, rgba(20, 181, 255, 0.2), rgba(121, 82, 245, 0.15)) !important;
+  --toc-active-background: linear-gradient(135deg, rgba(20, 181, 255, 0.2), rgba(121, 82, 245, 0.15)) !important;
+  --toc-active-border-color: rgba(20, 181, 255, 0.4) !important;
+  
   /* Colors - Matching original design */
   --color-bg: #0d1117;
   --color-surface: #161b22;
   --color-primary: #14b5ff;
-  --color-secondary: #f78166;
+  --color-secondary: #7952f5;
   --color-text: whitesmoke;
   --color-muted: #8b949e;
   --color-link: #7652f5;
@@ -193,50 +216,140 @@ body.pretext {
   text-decoration: none !important;
 }
 
-.ptx-toc ul.structural li {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid transparent;
-  border-radius: 8px;
+.ptx-toc ul.structural li,
+.ptx-toc .toc-item {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid transparent !important;
+  border-radius: 16px !important;
   margin-bottom: 6px !important;
   padding: 0.5rem 0.75rem !important;
   transition: all 0.3s ease;
 }
 
-.ptx-toc ul.structural li:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(20, 181, 255, 0.3);
+.ptx-toc ul.structural li:hover,
+.ptx-toc .toc-item:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(20, 181, 255, 0.3) !important;
   transform: translateX(4px);
 }
 
-/* Active/selected section - button-style gradient background */
-.ptx-toc ul.structural li.active,
-.ptx-toc li.active {
-  background: linear-gradient(135deg, rgba(20, 181, 255, 0.15), rgba(121, 82, 245, 0.1)) !important;
-  border-color: rgba(20, 181, 255, 0.3) !important;
-  box-shadow: none !important;
-  border-radius: 8px !important;
-}
-
-/* Root-level active sections - same styling */
-.ptx-toc ul.structural > li.active {
-  background: linear-gradient(135deg, rgba(20, 181, 255, 0.15), rgba(121, 82, 245, 0.1)) !important;
-  border-color: rgba(20, 181, 255, 0.3) !important;
-  box-shadow: none !important;
-  border-radius: 8px !important;
-}
-
-/* Override PreTeXt's default periwinkle backgrounds on active toc-title-box elements */
-.ptx-toc .toc-item.active > .toc-title-box,
-.ptx-toc .toc-item.contains-active > .toc-title-box {
+/* FORCE override PreTeXt's toc-title-box backgrounds - ultra high specificity */
+.ptx-sidebar .ptx-toc .toc-item .toc-title-box,
+.ptx-sidebar .ptx-toc .toc-item.active .toc-title-box,
+.ptx-sidebar .ptx-toc .toc-item.contains-active .toc-title-box,
+.ptx-toc .toc-item .toc-title-box,
+.ptx-toc .toc-item.active .toc-title-box,
+.ptx-toc .toc-item.contains-active .toc-title-box,
+nav.ptx-toc .toc-item .toc-title-box,
+nav.ptx-toc .toc-item.active .toc-title-box,
+nav.ptx-toc .toc-item.contains-active .toc-title-box,
+.toc-title-box {
   background: transparent !important;
   background-color: transparent !important;
   border-color: transparent !important;
   border-radius: inherit !important;
 }
 
+/* SPECIAL: Override for toc-frontmatter which uses different color palette */
+li.toc-item.toc-frontmatter,
+li.toc-item.toc-frontmatter.contains-active,
+li.toc-item.toc-frontmatter.active,
+.ptx-toc li.toc-frontmatter,
+.ptx-toc li.toc-frontmatter.contains-active,
+.ptx-toc li.toc-frontmatter.active,
+nav.ptx-toc li.toc-frontmatter.contains-active,
+#ptx-sidebar .ptx-toc li.toc-frontmatter.contains-active,
+li.toc-item.toc-backmatter,
+li.toc-item.toc-backmatter.contains-active,
+li.toc-item.toc-backmatter.active,
+.ptx-toc li.toc-backmatter.contains-active {
+  background: linear-gradient(135deg, rgba(20, 181, 255, 0.22), rgba(121, 82, 245, 0.16)) !important;
+  background-color: rgba(20, 181, 255, 0.2) !important;
+  border-color: rgba(20, 181, 255, 0.4) !important;
+  border-radius: 16px !important;
+}
+
+/* Force the title-box to have cyan gradient background directly */
+.ptx-toc li.toc-frontmatter.contains-active > .toc-title-box,
+.ptx-toc li.toc-frontmatter.active > .toc-title-box,
+.ptx-toc li.toc-backmatter.contains-active > .toc-title-box,
+.ptx-toc li.toc-backmatter.active > .toc-title-box,
+li.toc-frontmatter.contains-active > .toc-title-box,
+li.toc-backmatter.contains-active > .toc-title-box {
+  background: linear-gradient(135deg, rgba(20, 181, 255, 0.35), rgba(121, 82, 245, 0.25)) !important;
+  background-color: rgba(20, 181, 255, 0.3) !important;
+  border-radius: 12px !important;
+}
+
+/* Note: .contains-active parent items (Front Matter, chapter headings) have 
+   PreTeXt-default red styling that's extremely resistant to CSS overrides.
+   The active leaf items (actual notes/sections) correctly show cyan gradient. */
+
+/* Active/selected section - cyan-purple gradient background - FORCE override with high specificity */
+.ptx-toc ul.structural li.active,
+.ptx-toc li.active,
+.ptx-toc .toc-item.active,
+.ptx-toc .toc-item.contains-active,
+.ptx-sidebar .ptx-toc .toc-item.active,
+.ptx-sidebar .ptx-toc .toc-item.contains-active,
+nav.ptx-toc .toc-item.active,
+nav.ptx-toc .toc-item.contains-active,
+/* Specific overrides for frontmatter, chapter, section types */
+.ptx-toc .toc-frontmatter,
+.ptx-toc .toc-frontmatter.active,
+.ptx-toc .toc-frontmatter.contains-active,
+.ptx-toc .toc-chapter,
+.ptx-toc .toc-chapter.active,
+.ptx-toc .toc-chapter.contains-active,
+.ptx-toc .toc-backmatter,
+.ptx-toc .toc-backmatter.active,
+.ptx-toc .toc-backmatter.contains-active,
+.ptx-toc li.toc-frontmatter.contains-active,
+.ptx-toc li.toc-chapter.contains-active,
+.ptx-toc li.toc-backmatter.contains-active,
+/* Ultra-specific selectors to override PreTeXt theme */
+nav#ptx-toc.ptx-toc .toc-item.toc-frontmatter.contains-active,
+nav#ptx-toc.ptx-toc .toc-item.active:not(:has(.toc-item.active)),
+nav#ptx-toc.ptx-toc.depth2 ul.structural .toc-item.contains-active,
+nav#ptx-toc.ptx-toc.depth2 ul.structural ul.structural .toc-item.contains-active,
+#ptx-sidebar .ptx-toc .toc-item.contains-active,
+#ptx-sidebar .ptx-toc .toc-item.active {
+  background: linear-gradient(135deg, rgba(20, 181, 255, 0.25), rgba(121, 82, 245, 0.18)) !important;
+  background-color: rgba(20, 181, 255, 0.2) !important;
+  border-color: rgba(20, 181, 255, 0.4) !important;
+  box-shadow: 0 0 12px rgba(20, 181, 255, 0.15) !important;
+  border-radius: 16px !important;
+  color: #00e8ff !important;
+}
+
+/* Root-level active sections - same styling */
+.ptx-toc ul.structural > li.active,
+.ptx-toc > ul > li.active,
+.ptx-toc > ul > li.contains-active {
+  background: linear-gradient(135deg, rgba(20, 181, 255, 0.2), rgba(121, 82, 245, 0.15)) !important;
+  border-color: rgba(20, 181, 255, 0.4) !important;
+  box-shadow: 0 0 12px rgba(20, 181, 255, 0.15) !important;
+  border-radius: 16px !important;
+}
+
+/* Nested active items inside expanded sections */
+.ptx-toc .toc-item.active .toc-item,
+.ptx-toc .toc-item.contains-active .toc-item {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-radius: 16px !important;
+}
+
+.ptx-toc .toc-item.active .toc-item.active,
+.ptx-toc .toc-item.contains-active .toc-item.active {
+  background: linear-gradient(135deg, rgba(20, 181, 255, 0.25), rgba(121, 82, 245, 0.18)) !important;
+  border-color: rgba(20, 181, 255, 0.5) !important;
+}
+
 /* Remove square containers from nested active lists */
 .ptx-toc .toc-item.active > ul,
-.ptx-toc .toc-item.contains-active > ul {
+.ptx-toc .toc-item.contains-active > ul,
+.ptx-toc .toc-item ul.active,
+.ptx-toc ul.structural.active {
   background: transparent !important;
   background-color: transparent !important;
   border-radius: inherit !important;
@@ -247,7 +360,12 @@ body.pretext {
 .ptx-toc ul.structural li.active a,
 .ptx-toc li.active a,
 .ptx-toc li.active .codenumber,
-.ptx-toc li.active .title {
+.ptx-toc li.active .title,
+.ptx-toc .toc-item.active a,
+.ptx-toc .toc-item.active .codenumber,
+.ptx-toc .toc-item.active .title,
+.ptx-toc .toc-item.contains-active > .toc-title-box a,
+.ptx-toc .toc-item.contains-active > .toc-title-box .title {
   background: var(--gradient-cyan-to-blue);
   -webkit-background-clip: text;
   background-clip: text;
@@ -442,8 +560,8 @@ body.pretext {
 }
 
 .ptx-navbar .button {
-  background: linear-gradient(135deg, rgba(20, 181, 255, 0.15), rgba(121, 82, 245, 0.1)) !important;
-  border: 1px solid rgba(20, 181, 255, 0.3) !important;
+  background: linear-gradient(135deg, rgba(20, 181, 255, 0.35), rgba(121, 82, 245, 0.25)) !important;
+  border: 1px solid rgba(20, 181, 255, 0.5) !important;
   color: var(--color-text) !important;
   padding: 0.5rem 1rem !important;
   border-radius: 8px !important;
@@ -454,10 +572,10 @@ body.pretext {
 }
 
 .ptx-navbar .button:hover {
-  background: linear-gradient(135deg, rgba(20, 181, 255, 0.25), rgba(121, 82, 245, 0.15)) !important;
-  border-color: rgba(20, 181, 255, 0.5) !important;
+  background: linear-gradient(135deg, rgba(20, 181, 255, 0.5), rgba(121, 82, 245, 0.35)) !important;
+  border-color: rgba(20, 181, 255, 0.7) !important;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(20, 181, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(20, 181, 255, 0.3);
 }
 
 .ptx-navbar .button.disabled {
@@ -491,65 +609,10 @@ body.pretext {
   box-shadow: 0 4px 12px rgba(20, 181, 255, 0.2);
 }
 
-/* Footer navigation buttons container */
+/* Hide footer navigation buttons container entirely */
 .ptx-content-footer {
-  background: rgba(0, 0, 0, 0.6);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 1.5rem;
-  margin-top: 4rem;
-  text-align: center;
-  color: var(--color-muted);
-  position: relative;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
-
-/* Center the navigation buttons */
-.ptx-content-footer > a {
-  display: inline-flex;
-}
-
-/* Footer navigation buttons styling */
-.ptx-content-footer .button,
-.ptx-content-footer .previous-button,
-.ptx-content-footer .top-button,
-.ptx-content-footer .next-button {
-  background: linear-gradient(135deg, rgba(20, 181, 255, 0.15), rgba(121, 82, 245, 0.1)) !important;
-  border: 1px solid rgba(20, 181, 255, 0.3) !important;
-  color: var(--color-text) !important;
-  padding: 0.6rem 1.2rem !important;
-  border-radius: 8px !important;
-  font-family: var(--font-heading) !important;
-  font-size: 0.9rem !important;
-  transition: all 0.3s ease !important;
-  margin: 0 0.5rem;
-  text-decoration: none !important;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.ptx-content-footer .button:hover,
-.ptx-content-footer .previous-button:hover,
-.ptx-content-footer .top-button:hover,
-.ptx-content-footer .next-button:hover {
-  background: linear-gradient(135deg, rgba(20, 181, 255, 0.25), rgba(121, 82, 245, 0.15)) !important;
-  border-color: rgba(20, 181, 255, 0.5) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(20, 181, 255, 0.2);
-}
-
-/* Remove eigenscribe branding from content footer */
-.ptx-content-footer::before,
-.ptx-content-footer::after {
   display: none !important;
+  visibility: hidden !important;
 }
 
 /* Page footer at the very bottom - custom branding injected via build.sh */
