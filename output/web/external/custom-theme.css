@@ -554,12 +554,12 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
 
 .code-copy {
   position: absolute !important;
-  top: 6px !important;
-  right: 6px !important;
+  top: 12px !important;
+  right: 12px !important;
   background: linear-gradient(145deg, rgba(20, 181, 255, 0.3), rgba(121, 82, 245, 0.4)) !important;
   border: 1px solid rgba(20, 181, 255, 0.5) !important;
-  border-radius: 6px !important;
-  padding: 6px 8px !important;
+  border-radius: 4px !important;
+  padding: 4px 6px !important;
   cursor: pointer;
   transition: all 0.3s ease !important;
   z-index: 10;
