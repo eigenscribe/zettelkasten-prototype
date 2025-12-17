@@ -372,17 +372,41 @@ nav.ptx-toc .toc-item.active:not(:has(.toc-item)) {
 /* Folder titles when expanded - blue to purple gradient for contrast against blue background */
 .ptx-toc .toc-item.contains-active > .toc-title-box a,
 .ptx-toc .toc-item.contains-active > .toc-title-box .title,
+.ptx-toc .toc-item.contains-active > .toc-title-box .codenumber,
 .ptx-toc .toc-chapter.contains-active > .toc-title-box a,
 .ptx-toc .toc-chapter.contains-active > .toc-title-box .title,
+.ptx-toc .toc-chapter.contains-active > .toc-title-box .codenumber,
 .ptx-toc .toc-frontmatter.contains-active > .toc-title-box a,
 .ptx-toc .toc-frontmatter.contains-active > .toc-title-box .title,
+.ptx-toc .toc-frontmatter.contains-active > .toc-title-box .codenumber,
 .ptx-toc .toc-backmatter.contains-active > .toc-title-box a,
-.ptx-toc .toc-backmatter.contains-active > .toc-title-box .title {
+.ptx-toc .toc-backmatter.contains-active > .toc-title-box .title,
+.ptx-toc .toc-backmatter.contains-active > .toc-title-box .codenumber {
   background: linear-gradient(130deg, #60a5fa, #a78bfa, #c084fc) !important;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   font-weight: bold !important;
+}
+
+/* Folder expand/collapse arrow when expanded - matching gradient */
+.ptx-toc .toc-item.contains-active > .toc-title-box .toc-chevron,
+.ptx-toc .toc-item.contains-active > .toc-title-box .expand-collapse,
+.ptx-toc .toc-item.contains-active > .toc-title-box button,
+.ptx-toc .toc-chapter.contains-active > .toc-title-box .toc-chevron,
+.ptx-toc .toc-frontmatter.contains-active > .toc-title-box .toc-chevron,
+.ptx-toc .toc-backmatter.contains-active > .toc-title-box .toc-chevron {
+  color: #a78bfa !important;
+}
+
+.ptx-toc .toc-item.contains-active > .toc-title-box .material-symbols-outlined,
+.ptx-toc .toc-chapter.contains-active > .toc-title-box .material-symbols-outlined,
+.ptx-toc .toc-frontmatter.contains-active > .toc-title-box .material-symbols-outlined,
+.ptx-toc .toc-backmatter.contains-active > .toc-title-box .material-symbols-outlined {
+  background: linear-gradient(130deg, #60a5fa, #a78bfa, #c084fc) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
 /* Main Content Area */
