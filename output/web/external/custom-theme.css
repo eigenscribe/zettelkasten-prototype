@@ -910,7 +910,7 @@ button.light-dark-button {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #0a0a0f;
+  background: url('external/space-bg.png') center center / cover no-repeat, #0a0a0f;
   z-index: 9999;
   display: none;
   opacity: 0;
